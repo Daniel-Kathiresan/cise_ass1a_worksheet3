@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb+srv://Test:Test@mernatoz.jscnl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  }
