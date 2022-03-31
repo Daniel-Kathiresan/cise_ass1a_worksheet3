@@ -1,0 +1,19 @@
+{
+  "name": "cise_ass1a_worksheet3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-Kathiresan/cise_ass1a_worksheet3.git"
+  },
+  "author": "Daniel Kathiresan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel-Kathiresan/cise_ass1a_worksheet3/issues"
+  },
+  "homepage": "https://github.com/Daniel-Kathiresan/cise_ass1a_worksheet3#readme"
+}
