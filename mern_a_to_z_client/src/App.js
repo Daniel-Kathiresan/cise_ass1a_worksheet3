@@ -1,25 +1,28 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+// app.js
 
-import CreateBook from './components/CreateBook';
-import ShowBookList from './components/ShowBookList';
-import ShowBookDetails from './components/ShowBookDetails';
-import UpdateBookInfo from './components/UpdateBookInfo';
+const express = require('express');
+const connectDB = require('./config/db');
+var cors = require('cors');
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div>
-          <Route exact path='/' component={ShowBookList} />
-          <Route path='/create-book' component={CreateBook} />
-          <Route path='/edit-book/:id' component={UpdateBookInfo} />
-          <Route path='/show-book/:id' component={ShowBookDetails} />
-        </div>
-      </Router>
-    );
-  }
-}
+// routes
+const books = require('./routes/api/books');
 
-export default App;
+const app = express();
+
+// Connect Database
+connectDB();
+
+// cors
+app.use(cors({ origin: true, credentials: true }));
+
+// Init Middleware
+app.use(express.json({ extended: false }));
+
+app.get('/', (req, res) => res.send('Hello world!'));
+
+// use Routes
+app.use('/api/books', books);
+
+const port = process.env.PORT || 8082;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
