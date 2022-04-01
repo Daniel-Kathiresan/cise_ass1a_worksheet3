@@ -10,8 +10,8 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon server.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
+    "concurrently": "^7.0.0",
     "config": "^3.3.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
