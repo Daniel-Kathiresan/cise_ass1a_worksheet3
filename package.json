@@ -10,8 +10,8 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon server.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\""
+    "develop": "concurrently --kill-others-on-fail \"npm run app\" \"npm run start --prefix frontend\"",
+    "start": "concurrently --kill-others-on-fail \"npm run app\" \"npm run start --prefix frontend\""
   },
   "repository": {
     "type": "git",
@@ -36,5 +36,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.5.5"
   }
 }
